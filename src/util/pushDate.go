@@ -2,10 +2,11 @@ package util
 
 import (
 	"fmt"
+	"config"
 )
 
 //向普罗米修斯推数据
 func PushJKdata(pushdata string) {
 	fmt.Println("push data: ", pushdata)
-	PostHttpRequestText("http://10.10.1.70:30001/metrics/job/monitor_jiesuan", pushdata)
+	PostHttpRequestText(config.PrometheusURL+"/metrics/job/monitor_jiesuan", pushdata)
 }

@@ -69,5 +69,8 @@ const(
 	RealtimeWithoutChannel="RealtimeWithoutChannel"
 	QueryAlipayWithoutChannel = "QueryAlipayWithoutChannel"
 	QueryWXpayWithoutChannel = "QueryWXpayWithoutChannel"
+	
+	PrometheusURL = "http://10.10.1.70:30001"
+	
 )
 
