@@ -8,7 +8,7 @@ import (
 	"config"
 )
 
-//服务层：加密数据、组装请求URL，发送交易请求、判断返回体
+//服务层：加密数据、组装请求URL，发送交易请求
 
 func SendPostRquest(env string, deskey string,dataStr string, timestampStr string,api string,orderId string,httpHeader map[string]string) string{
 	var requestURLPre string

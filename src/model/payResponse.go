@@ -3,7 +3,7 @@ package model
 import (
 	"strings"
 )
-
+//支付接口返回体
 type PayResponse struct {
 	Code       string
 	Data       PayData
