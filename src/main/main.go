@@ -73,10 +73,4 @@ func uat(bizmodel string, env string, key string, dealer string, broker string, 
 	}
 }
 
-func pushJKdata(pushdata string){
-	fmt.Println("push data: ",pushdata)
-	util.PostHttpRequestText("http://10.10.1.70:30001/metrics/job/monitor_jiesuan",pushdata)
-}
-
-
 
