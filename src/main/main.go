@@ -37,9 +37,8 @@ func main() {
 	fmt.Println("dealer: ", dealer)
 	fmt.Println("broker: ", broker)
 	fmt.Println("amount: ", pay)
-    
 	uat(config.ModelRealTime, env, config.Deskey, dealer, broker, pay)
-	uat(config.ModelAliPay, env, config.Deskey, dealer, broker, pay)
+	uat(config.ModelAliPay, env, config.Deskey, dealer, broker,pay)
 }
 
 func uat(bizmodel string, env string, key string, dealer string, broker string, pay string) {

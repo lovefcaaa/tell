@@ -79,27 +79,27 @@ func PostHttpRequest(url string, postdata string, headersMap map[string]string) 
 	return bodyStr;
 }
 
-func PostHttpRequestText(url string, postdata string) string {
+func PostHttpRequestText(url string, postdata string) (string ,int){
 	client := &http.Client{}
 	req, err1 := http.NewRequest("POST", url, strings.NewReader(postdata+"\n"))
 	if err1 != nil {
 		fmt.Println(err1.Error())
-		return ""
+		return "",500
 	}
 	resp, err2 := client.Do(req)
 	if err2 != nil {
 		fmt.Println(err2.Error())
-		return ""
+		return "",500
 	}
 	fmt.Println("response status :",resp.Status)
 	defer resp.Body.Close()
 	body, err3 := ioutil.ReadAll(resp.Body)
 	if err3 != nil {
 		fmt.Println(err3.Error())
-		return ""
+		return "",500
 	}
 	var bodyStr string
 	bodyStr = string(body)
 	fmt.Println("response body : ",bodyStr)
-	return bodyStr;
+	return bodyStr, resp.StatusCode
 }
